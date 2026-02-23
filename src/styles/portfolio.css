@@ -502,13 +502,10 @@ section {
   background: var(--nav-bg);
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
-  z-index: 200;
+  z-index: 999;
 }
-@media (max-width: 768px) {
-  .nav {
-    padding: 1rem 1.2rem;
-  }
-}
+
+/* Logo */
 .nav-logo {
   font-family: 'Syne', sans-serif;
   font-weight: 800;
@@ -520,17 +517,11 @@ section {
   color: var(--accent);
 }
 
-/* Desktop nav spacing fix */
+/* Desktop Links */
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 3rem;   /* adjust to 4rem if you want more space */
-}
-
-@media (max-width: 768px) {
-  .nav-links {
-    display: flex; /* keep flex */
-  }
+  gap: 3rem;
 }
 
 .nav-links a {
@@ -545,45 +536,14 @@ section {
 .nav-links a:hover {
   color: var(--accent);
 }
-@media (max-width: 768px) {
 
-  .hamburger {
-    display: flex;
-  }
-
-  .nav-links {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-
-    background: var(--nav-bg);
-    backdrop-filter: blur(20px);
-
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-
-    padding: 2rem 0;
-
-    border-bottom: 1px solid var(--border);
-
-    transform: translateY(-120%);
-    transition: 0.3s ease;
-  }
-
-  .nav-links.open {
-    transform: translateY(0);
-  }
-
-}
-/* RIGHT SIDE */
-
+/* Right Side */
 .nav-right {
   display: flex;
   align-items: center;
   gap: 1.5rem;
 }
+
 /* ================= HAMBURGER ================= */
 
 .hamburger {
@@ -613,13 +573,50 @@ section {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
+/* ================= MOBILE NAV ================= */
+
 @media (max-width: 768px) {
 
-  .footer {
+  .nav {
+    padding: 1rem 1.2rem;
+  }
+
+  .nav-right {
+    gap: 0.8rem;
+  }
+
+  .theme-toggle {
+    width: 60px;
+    height: 32px;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+
+    background: var(--nav-bg);
+    backdrop-filter: blur(20px);
+
     flex-direction: column;
-    gap: 1rem;
-    text-align: center;
-    padding: 2rem 1.2rem;
+    align-items: center;
+    gap: 1.5rem;
+
+    padding: 2rem 0;
+
+    border-bottom: 1px solid var(--border);
+
+    transform: translateY(-120%);
+    transition: 0.3s ease;
+  }
+
+  .nav-links.open {
+    transform: translateY(0);
   }
 
 }
