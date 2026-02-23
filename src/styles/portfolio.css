@@ -138,6 +138,14 @@ section {
   gap: 4rem;
 }
 /* ================= MOBILE ABOUT FIX ================= */
+.theme-toggle {
+  width: 60px;
+  height: 32px;
+}
+
+.nav-right {
+  gap: 0.8rem;
+}
 @media (max-width: 900px) {
 
   .about-inner {
@@ -496,7 +504,11 @@ section {
   border-bottom: 1px solid var(--border);
   z-index: 200;
 }
-
+@media (max-width: 768px) {
+  .nav {
+    padding: 1rem 1.2rem;
+  }
+}
 .nav-logo {
   font-family: 'Syne', sans-serif;
   font-weight: 800;
@@ -508,9 +520,17 @@ section {
   color: var(--accent);
 }
 
+/* Desktop nav spacing fix */
 .nav-links {
   display: flex;
-  gap: 3rem;
+  align-items: center;
+  gap: 3rem;   /* adjust to 4rem if you want more space */
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: flex; /* keep flex */
+  }
 }
 
 .nav-links a {
@@ -533,7 +553,7 @@ section {
 
   .nav-links {
     position: absolute;
-    top: 70px;
+    top: 100%;
     left: 0;
     right: 0;
 
@@ -565,6 +585,7 @@ section {
   gap: 1.5rem;
 }
 /* ================= HAMBURGER ================= */
+
 .hamburger {
   display: none;
   flex-direction: column;
