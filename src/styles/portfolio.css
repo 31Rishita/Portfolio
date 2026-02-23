@@ -496,26 +496,7 @@ section {
   border-bottom: 1px solid var(--border);
   z-index: 200;
 }
-/* ================= MOBILE NAV FIX ================= */
-@media (max-width: 768px) {
 
-  .nav {
-    padding: 1rem 1.2rem;
-  }
-
-  .nav-links {
-    display: none;
-  }
-
-  .nav-logo {
-    font-size: 1.1rem;
-  }
-
-  .nav-right {
-    gap: 0.8rem;
-  }
-
-}
 @media (max-width: 768px) {
 
   .nav {
