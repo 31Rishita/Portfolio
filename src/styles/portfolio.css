@@ -24,7 +24,7 @@ html {
   --text: #e8eaf0;
   --muted: #6b7280;
   --shadow: rgba(0,0,0,0.5);
-  --nav-bg: rgba(8,10,15,0.75);
+  --nav-bg: rgba(8,10,15,0.92);
 }
 
 .portfolio[data-theme="light"] {
@@ -37,7 +37,7 @@ html {
   --text: #111827;
   --muted: #6b7280;
   --shadow: rgba(0,0,0,0.12);
-  --nav-bg: #faf9f5;
+  --nav-bg: rgba(250,249,245,0.95); 
 }
 
 /* ================= ROOT ================= */
@@ -500,7 +500,7 @@ section {
 
   padding: 1.5rem 4rem;
   background: var(--nav-bg);
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(10px);   /* reduced blur */
   border-bottom: 1px solid var(--border);
   z-index: 999;
 }
@@ -579,6 +579,7 @@ section {
 
   .nav {
     padding: 1rem 1.2rem;
+    border-bottom: none;     /* ✅ removes shadow line */
   }
 
   .nav-right {
@@ -601,7 +602,7 @@ section {
     right: 0;
 
     background: var(--nav-bg);
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(10px);
 
     flex-direction: column;
     align-items: center;
