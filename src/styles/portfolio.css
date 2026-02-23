@@ -573,53 +573,68 @@ section {
   transform: rotate(-45deg) translate(5px, -5px);
 }
 
-/* ================= MOBILE NAV ================= */
+/* ================= MOBILE NAV FIX ================= */
 
 @media (max-width: 768px) {
-
   .nav {
     padding: 1rem 1.2rem;
-    border-bottom: none;     /* ✅ removes shadow line */
-  }
-
-  .nav-right {
-    gap: 0.8rem;
-  }
-
-  .theme-toggle {
-    width: 60px;
-    height: 32px;
-  }
-
-  .hamburger {
-    display: flex;
+    border-bottom: 1px solid var(--border);
+    /* Ensure the nav stays on top of everything */
+    z-index: 1000; 
   }
 
   .nav-links {
-    position: absolute;
-    top: 100%;
+    position: fixed;
+    top: 0;
     left: 0;
-    right: 0;
-
-    background: var(--nav-bg);
-    backdrop-filter: blur(10px);
+    width: 100%;
+    height: 100vh;
+    
+    /* 🔥 The Secret Sauce: Semi-transparent background + Blur */
+    background: var(--nav-bg); 
+    backdrop-filter: blur(15px); 
+    -webkit-backdrop-filter: blur(15px); /* Support for Safari */
 
     flex-direction: column;
+    justify-content: center;
     align-items: center;
-    gap: 1.5rem;
+    gap: 2.5rem;
+    
+    transform: translateY(-100%);
+    transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+    z-index: -1;
+  }
 
-    padding: 2rem 0;
-
-    border-bottom: 1px solid var(--border);
-
-    transform: translateY(-120%);
-    transition: 0.3s ease;
+  /* Ensure your --nav-bg variable has some transparency for the blur to show */
+  .portfolio[data-theme="dark"] {
+    --nav-bg: rgba(8, 10, 15, 0.8); /* 80% opacity */
+  }
+  
+  .portfolio[data-theme="light"] {
+    --nav-bg: rgba(250, 249, 245, 0.8); /* 80% opacity */
   }
 
   .nav-links.open {
     transform: translateY(0);
   }
 
+  /* 4. Link Styling in Mobile */
+  .nav-links a {
+    font-size: 1.5rem; /* Make links larger on mobile */
+    font-weight: 700;
+    color: var(--text); /* Ensure contrast */
+    letter-spacing: 0.2em;
+  }
+
+  .hamburger {
+    display: flex;
+    z-index: 1001; /* Keep hamburger above the mobile menu */
+  }
+  
+  .nav-right {
+    gap: 1rem;
+    z-index: 1001;
+  }
 }
 /* THEME TOGGLE */
 
