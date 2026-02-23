@@ -1,33 +1,38 @@
 import { useState } from "react";
 
 export default function Nav({ theme, toggleTheme }) {
-  const [scrolled, setScrolled] = useState(false);
+  const [menuOpen, setMenuOpen] = useState(false);
 
   return (
     <nav className="nav">
-
-      {/* LEFT LOGO */}
       <div className="nav-logo">
         Rishita<span>.</span>
       </div>
 
-      {/* CENTER LINKS */}
-      <div className="nav-links">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#contact">Contact</a>
+      {/* Desktop Links */}
+      <div className={`nav-links ${menuOpen ? "open" : ""}`}>
+        <a href="#about" onClick={() => setMenuOpen(false)}>About</a>
+        <a href="#projects" onClick={() => setMenuOpen(false)}>Projects</a>
+        <a href="#contact" onClick={() => setMenuOpen(false)}>Connect</a>
       </div>
 
-      {/* RIGHT SIDE */}
       <div className="nav-right">
-
-        {/* THEME TOGGLE */}
-        <button className="theme-toggle" onClick={toggleTheme}>
-          <span className={theme === "light" ? "active" : ""}>☀</span>
+        {/* Theme Toggle */}
+        <div className="theme-toggle" onClick={toggleTheme}>
           <span className={theme === "dark" ? "active" : ""}>🌙</span>
+          <span className={theme === "light" ? "active" : ""}>☀️</span>
           <div className={`toggle-ball ${theme}`} />
-        </button>
+        </div>
 
+        {/* Hamburger */}
+        <div
+          className={`hamburger ${menuOpen ? "active" : ""}`}
+          onClick={() => setMenuOpen(!menuOpen)}
+        >
+          <span />
+          <span />
+          <span />
+        </div>
       </div>
     </nav>
   );
