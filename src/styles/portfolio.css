@@ -497,17 +497,6 @@ section {
   z-index: 200;
 }
 
-@media (max-width: 768px) {
-
-  .nav {
-    padding: 1rem 1.2rem;
-  }
-
-  .nav-links {
-    display: none; /* Hide for now */
-  }
-
-}
 .nav-logo {
   font-family: 'Syne', sans-serif;
   font-weight: 800;
