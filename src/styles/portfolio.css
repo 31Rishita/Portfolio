@@ -137,6 +137,24 @@ section {
   align-items: center;
   gap: 4rem;
 }
+/* ================= MOBILE ABOUT FIX ================= */
+@media (max-width: 900px) {
+
+  .about-inner {
+    grid-template-columns: 1fr;
+    text-align: center;
+    gap: 2.5rem;
+  }
+
+  .about-photo-wrap {
+    justify-content: center;
+  }
+
+  .photo-circle {
+    width: 220px;
+  }
+
+}
 .about-photo-wrap {
   display: flex;
   justify-content: flex-end;   /* 🔥 pushes photo to right */
@@ -169,10 +187,16 @@ section {
 /* ================= CONNECT SECTION ================= */
 
 .connect-section {
-  padding: 0rem 4rem;
+  padding: 3rem 2rem;
   max-width: 1000px;
   margin: 0 auto;
   text-align: center;
+}
+
+@media (max-width: 768px) {
+  .connect-section {
+    padding: 2rem 1.2rem;
+  }
 }
 
 /* Connect HEADER */
@@ -471,6 +495,26 @@ section {
   backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border);
   z-index: 200;
+}
+/* ================= MOBILE NAV FIX ================= */
+@media (max-width: 768px) {
+
+  .nav {
+    padding: 1rem 1.2rem;
+  }
+
+  .nav-links {
+    display: none;
+  }
+
+  .nav-logo {
+    font-size: 1.1rem;
+  }
+
+  .nav-right {
+    gap: 0.8rem;
+  }
+
 }
 @media (max-width: 768px) {
 
